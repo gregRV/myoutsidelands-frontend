@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import TimeColumn from './TimeColumn';
+import StageColumn from './StageColumn';
 
 export default class DaySchedule extends Component {
   static propTypes = {
@@ -14,6 +15,7 @@ export default class DaySchedule extends Component {
       <h1>{day}</h1>
       <p>{JSON.stringify(schedule)}</p>
       <TimeColumn />
+      <StageColumn />
     </div>;
   }
 }
