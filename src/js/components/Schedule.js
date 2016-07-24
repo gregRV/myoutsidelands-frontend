@@ -7,10 +7,9 @@ export default class Schedule extends Component {
 
   render() {
     const { schedule } = this.props;
-    console.log('schedule', schedule);
 
     return (
-      <h1>{schedule.length}</h1>
+      <h1>{JSON.stringify(schedule)}</h1>
     );
   }
 }
