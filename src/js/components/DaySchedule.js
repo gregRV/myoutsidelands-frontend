@@ -1,10 +1,14 @@
 import './DaySchedule.scss';
 
 import React, { Component, PropTypes } from 'react';
+import _ from 'lodash';
 
 import goldWavesTop from '../../images/goldwaves-top-dostuff.png';
 import goldWavesMiddle from '../../images/goldwaves-inner.png';
 import goldWavesBottom from '../../images/goldwaves-bottom.png';
+
+import StageColumn from './StageColumn';
+import TimeColumn from './TimeColumn';
 
 export default class DaySchedule extends Component {
   static propTypes = {
@@ -25,6 +29,15 @@ export default class DaySchedule extends Component {
       backgroundImage: `url(${goldWavesBottom})`,
       backgroundRepeat: 'repeat-x'
     };
+    const groupedSchedules = _.groupBy(schedule, 'stage');
+    const stageNames = [
+      'Lands End',
+      'Sutro',
+      'Twin Peaks',
+      'Panhandle',
+      'The House by Heineken',
+      'The Barbary'
+    ];
 
     return (
       <div className="m-t-3 m-b-3">
@@ -32,7 +45,10 @@ export default class DaySchedule extends Component {
         <div className="day-schedule-middle" style={dayScheduleMiddleStyle}>
           <div className="day-schedule-middle-offset">
             <h1>{day}</h1>
-            <p className="m-b-0">{JSON.stringify(schedule)}</p>
+            <div className="columns-container">
+              <TimeColumn />
+              { stageNames.map((stageName) => <StageColumn ken={stageName} name={stageName} events={groupedSchedules[stageName] || []} />) }
+            </div>
           </div>
         </div>
         <div className="day-schedule-bottom" style={dayScheduleBottomStyle}></div>

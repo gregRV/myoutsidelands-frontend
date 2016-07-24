@@ -4,11 +4,10 @@
 }
 
 .day-schedule-middle {
-  position: relative;
+  min-height: 1000px;
 }
 
-.day-schedule-middle-offset {
-  position: absolute;
-  top: -50px;
+.columns-container {
+  display: flex;
+  justify-content: center;
 }
-
