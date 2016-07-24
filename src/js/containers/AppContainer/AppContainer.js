@@ -10,21 +10,34 @@ import { connect } from 'react-redux';
 
 import { getSchedule } from '../../reducers';
 
+import Schedule from '../../components/Schedule';
+
 export class AppContainer extends Component {
 
   static propTypes = {
     schedule: PropTypes.array.isRequired
   };
 
+  renderConnect () {
+    return (
+      <div>
+        <img className="spotify-logo m-t-3 m-b-2" src={spotifyLogo} alt="spotify logo"/>
+        <p className="app-instructions">Link your Spotify accout to auto-generate a lineup schedule.</p>
+        <img className="connect-now-button m-t-2" src={connectNowButton} alt="connect now button"/>
+      </div>
+    );
+  }
+
   render () {
+    const { schedule } = this.props;
+    const body = schedule.length ? <Schedule schedule={schedule} /> : this.renderConnect();
+
     return (
       <div className="app-container" style={{ backgroundImage: `url(${yellowDenimBackground})` }}>
         <header className="text-sm-center" style={{ backgroundImage: `url(${redDenimBackground})` }}>
           <img className="main-logo" src={headerImg} alt="main logo"/>
         </header>
-        <img className="spotify-logo m-t-3 m-b-2" src={spotifyLogo} alt="spotify logo"/>
-        <p className="app-instructions">Link your Spotify accout to auto-generate a lineup schedule.</p>
-        <img className="connect-now-button m-t-2" src={connectNowButton} alt="connect now button"/>
+        {body}
       </div>
     );
   }
