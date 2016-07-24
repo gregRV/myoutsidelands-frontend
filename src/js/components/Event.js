@@ -12,15 +12,29 @@ export default class Event extends Component {
       color: '#FFF',
       padding: '10px',
       margin: '1px'
-    }
+    };
     const likedStyle = {
       backgroundColor: '#EF3B46',
       color: '#FFF',
       padding: '10px',
       margin: '1px'
+    };
+    const nullStyle = {
+      backgroundColor: '#D9770B',
+      color: '#F9A722',
+      padding: '10px',
+      margin: '1px'
+    };
+    let style;
+    let icon;
+
+    if (!event.tag) {
+      style = nullStyle;
+      icon = '';
+    } else {
+      style = event.tag === 'recommended' ? recommendedStyle : likedStyle;
+      icon = event.tag === 'recommended' ? star : heart;
     }
-    const style = event.tag === 'recommended' ? recommendedStyle : likedStyle;
-    const icon = event.tag === 'recommended' ? star : heart;
 
     return <div style={style}>
       <img src={icon} />
