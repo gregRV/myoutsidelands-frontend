@@ -30,7 +30,8 @@
     "lint": "eslint config src/js/** --ext .js",
     "test": "mocha --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --recursive ./test/unit",
     "test:watch": "npm run test -- --watch",
-    "cover": "istanbul cover _mocha -- --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --recursive ./test/unit"
+    "cover": "istanbul cover _mocha -- --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --recursive ./test/unit",
+    "deploy": "npm run build && surge ./build myoutsidelands.com"
   },
   "devDependencies": {
     "babel-core": "6.7.7",
