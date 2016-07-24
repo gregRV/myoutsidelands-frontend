@@ -22,9 +22,9 @@ export default class Schedule extends Component {
       </div>
       <TimeColumn times={[]} />
       <StageColumn />
-      <DaySchedule day={'Friday'} schedule={schedule[0]}/>
-      <DaySchedule day={'Saturday'} schedule={schedule[1]}/>
-      <DaySchedule day={'Sunday'} schedule={schedule[2]}/>
+      <DaySchedule day={'Friday'} schedule={groupedSchedules['2016-08-05']}/>
+      <DaySchedule day={'Saturday'} schedule={groupedSchedules['2016-08-06']}/>
+      <DaySchedule day={'Sunday'} schedule={groupedSchedules['2016-08-07']}/>
     </div>;
   }
 }
