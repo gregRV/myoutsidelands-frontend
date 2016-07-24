@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M72.2106398,22.7834263 C69.9013602,22.7834263 68,24.7192818 68,27.0285606 C68,29.4403314 69.0223733,30.5865576 70.4603196,31.9338635 C72.4100546,33.7030719 76.0030004,36.363602 76.0030004,36.363602 C76.1666098,36.2043983 79.6362166,33.6276588 81.5396804,31.9004373 C82.9776267,30.5531313 84,29.4069051 84,26.9951344 C84,24.6858555 82.0986398,22.75 79.7893602,22.75 C78.0189849,22.75 76.604318,23.5955702 75.9969996,25.2448141 C75.3864,23.6234598 73.9752096,22.7834263 72.2106398,22.7834263 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="schedule-v2" transform="translate(-143.000000, -779.000000)">
+            <g id="Group-19" transform="translate(75.000000, 431.000000)">
+                <g id="Group-5" transform="translate(0.000000, 326.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
