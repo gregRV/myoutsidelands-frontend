@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "autoprefixer": "6.3.6",
+    "axios": "0.13.1",
     "classnames": "2.2.3",
     "history": "2.1.0",
     "lodash": "4.11.1",
