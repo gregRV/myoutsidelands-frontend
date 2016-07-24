@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
-import friendList from './friendList';
+import schedule from './schedule';
 
 const rootReducer = combineReducers({
-  friendList
+  schedule
 });
 
 export default rootReducer;
 
 // Selectors
-export const getFriendList = (state) => {
-  return state.friendList;
-}
+export const getSchedule = (state) => {
+  return state.schedule;
+};
