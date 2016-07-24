@@ -37,6 +37,7 @@ export class AppContainer extends Component {
         <header className="text-sm-center" style={{ backgroundImage: `url(${redDenimBackground})` }}>
           <img className="main-logo" src={headerImg} alt="main logo"/>
         </header>
+        <div className="brown-band"></div>
         {body}
       </div>
     );
