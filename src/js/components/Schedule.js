@@ -14,18 +14,21 @@ export default class Schedule extends Component {
   render() {
     const { schedule } = this.props;
     const groupedSchedules = _.groupBy(schedule, 'day');
+    const friday = 'Friday, August 5';
+    const saturday = 'Saturday, August 6';
+    const sunday = 'Sunday, August 7';
 
     return (
       <div className="schedule-container">
         <div className="m-b-2">
-          <a className="m-a-1" href='#'>Friday, August 5</a>
-          <a className="m-a-1" href='#'>Saturday, August 6</a>
-          <a className="m-a-1" href='#'>Sunday, August 7</a>
+          <a className="m-a-1" href='#'>{friday}</a>
+          <a className="m-a-1" href='#'>{saturday}</a>
+          <a className="m-a-1" href='#'>{sunday}</a>
         </div>
         <img className="legend m-b-1" src={legend} alt="legend"/>
-        <DaySchedule day={'Friday'} schedule={groupedSchedules['2016-08-05']}/>
-        <DaySchedule day={'Saturday'} schedule={groupedSchedules['2016-08-06']}/>
-        <DaySchedule day={'Sunday'} schedule={groupedSchedules['2016-08-07']}/>
+        <DaySchedule day={friday} schedule={groupedSchedules['2016-08-05']}/>
+        <DaySchedule day={saturday} schedule={groupedSchedules['2016-08-06']}/>
+        <DaySchedule day={sunday} schedule={groupedSchedules['2016-08-07']}/>
       </div>
     );
   }

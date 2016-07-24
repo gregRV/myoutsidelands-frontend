@@ -1,0 +1,14 @@
+.day-schedule-top,
+.day-schedule-bottom {
+  min-height: 140px;
+}
+
+.day-schedule-middle {
+  position: relative;
+}
+
+.day-schedule-middle-offset {
+  position: absolute;
+  top: -50px;
+}
+
