@@ -1,3 +1,5 @@
+import './TimeColumn.scss';
+
 import React, { Component, PropTypes } from 'react';
 
 export default class TimeColumn extends Component {
@@ -10,17 +12,17 @@ export default class TimeColumn extends Component {
         return `${hour}:${min}`;
       });
     }));
+
+    times.push('10:00');
+
     const timesToRender = times.map((ts, i) => {
       return <li key={i}>{ts}</li>;
     });
 
     return (
-      <div>
-        <h1>Times</h1>
-        <ul>
-          {timesToRender}
-        </ul>
-      </div>
+      <ul className="time-column list-unstyled">
+        {timesToRender}
+      </ul>
     );
   }
 }
