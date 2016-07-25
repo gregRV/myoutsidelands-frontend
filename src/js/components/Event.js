@@ -1,6 +1,7 @@
 import './Event.scss';
 
 import React, { Component, PropTypes } from 'react';
+import moment from 'moment';
 import heart from '../../images/heart.svg';
 import star from '../../images/star.svg';
 
@@ -10,20 +11,14 @@ export default class Event extends Component {
     const recommendedStyle = {
       backgroundColor: '#0F2043',
       color: '#FFF',
-      padding: '10px',
-      margin: '1px'
     };
     const likedStyle = {
       backgroundColor: '#EF3B46',
       color: '#FFF',
-      padding: '10px',
-      margin: '1px'
     };
     const nullStyle = {
       backgroundColor: '#D9770B',
       color: '#F9A722',
-      padding: '10px',
-      margin: '1px'
     };
     let style;
     let icon;
@@ -36,10 +31,30 @@ export default class Event extends Component {
       icon = tag === 'recommended' ? star : heart;
     }
 
+    const startHour = time.start.toString().substring(0, 2);
+    const startMinutes = time.start.toString().substring(2, 4);
+    const startMoment = moment(`${startHour}:${startMinutes}`, 'HH:mm');
+    const endHour = time.end.toString().substring(0, 2);
+    const endMinutes = time.end.toString().substring(2, 4);
+    const endMoment = moment(`${endHour}:${endMinutes}`, 'HH:mm');
+    const startOfDayMoment = moment('12:00', 'HH:mm');
+    const minutesOffset = startMoment.diff(startOfDayMoment, 'minutes');
+    const height = endMoment.diff(startMoment, 'minutes');
+
+    style.height = `${height * 2}px`;
+    style.position = 'absolute';
+    style.top = `${minutesOffset * 2 + 50}px`;
+    style.overflow = 'hidden';
+    style.width = '180px';
+    style.paddingTop = '10px';
+    style.border = '1px solid';
+
+    let nameStyle = name.length > 90 ? { fontSize: '9px' } : { fontSize: '12px' };
+
     return (
       <div style={style}>
         <img src={icon} />
-        <p>{name.toUpperCase()}</p>
+        <p style={nameStyle}>{name.toUpperCase()}</p>
         <p>{time.start} - {time.end}</p>
       </div>
     );
