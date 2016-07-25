@@ -6,7 +6,7 @@ import star from '../../images/star.svg';
 
 export default class Event extends Component {
   render() {
-    const {event} = this.props;
+    const { event: { name, time, tag }, isFirstArtistOfTheDay } = this.props;
     const recommendedStyle = {
       backgroundColor: '#0F2043',
       color: '#FFF',
@@ -28,18 +28,20 @@ export default class Event extends Component {
     let style;
     let icon;
 
-    if (!event.tag) {
+    if (!tag) {
       style = nullStyle;
       icon = '';
     } else {
-      style = event.tag === 'recommended' ? recommendedStyle : likedStyle;
-      icon = event.tag === 'recommended' ? star : heart;
+      style = tag === 'recommended' ? recommendedStyle : likedStyle;
+      icon = tag === 'recommended' ? star : heart;
     }
 
-    return <div style={style}>
-      <img src={icon} />
-      <p>{event.name.toUpperCase()}</p>
-      <p>{event.time.start} - {event.time.end}</p>
-    </div>;
+    return (
+      <div style={style}>
+        <img src={icon} />
+        <p>{name.toUpperCase()}</p>
+        <p>{time.start} - {time.end}</p>
+      </div>
+    );
   }
 }

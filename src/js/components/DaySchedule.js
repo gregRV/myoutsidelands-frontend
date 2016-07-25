@@ -47,7 +47,7 @@ export default class DaySchedule extends Component {
             <h1>{day}</h1>
             <div className="columns-container">
               <TimeColumn />
-              { stageNames.map((stageName) => <StageColumn ken={stageName} name={stageName} events={groupedSchedules[stageName] || []} />) }
+              { stageNames.map((stageName) => <StageColumn key={stageName} name={stageName} events={groupedSchedules[stageName] || []} />) }
             </div>
           </div>
         </div>
