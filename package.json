@@ -31,7 +31,7 @@
     "test": "mocha --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --recursive ./test/unit",
     "test:watch": "npm run test -- --watch",
     "cover": "istanbul cover _mocha -- --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --recursive ./test/unit",
-    "deploy": "npm run build && surge ./build myoutsidelands.com"
+    "deploy": "npm run build && surge ./build schedule.myoutsidelands.com"
   },
   "devDependencies": {
     "babel-core": "6.7.7",
