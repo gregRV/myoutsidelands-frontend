@@ -55,7 +55,7 @@ export default class Event extends Component {
       <div style={style}>
         <img src={icon} />
         <p style={nameStyle}>{name.toUpperCase()}</p>
-        <p>{time.start} - {time.end}</p>
+        <p>{startMoment.format('h:mm')} - {endMoment.format('h:mm')}</p>
       </div>
     );
   }
