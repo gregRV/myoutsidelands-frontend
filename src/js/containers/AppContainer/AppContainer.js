@@ -6,6 +6,7 @@ import headerImg from '../../../images/header-img.png';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import axios from 'axios';
 
 import { getSchedule } from '../../reducers';
 import { updateSchedule } from '../../reducers/schedule';
@@ -17,6 +18,20 @@ export class AppContainer extends Component {
   static propTypes = {
     schedule: PropTypes.array.isRequired
   };
+
+  componentDidMount () {
+    const { email } = this.props.location.query;
+    const url = `http://www.myoutsidelands.com/schedule?email=${email}`;
+
+    axios.get(url)
+      .then(({ data }) => {
+        if (!data) {
+          window.location = 'http://www.myoutsidelands.com';
+        } else {
+          this.props.actions.updateSchedule(data);
+        }
+      });
+  }
 
   render () {
     const { schedule } = this.props;
