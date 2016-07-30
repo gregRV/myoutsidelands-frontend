@@ -49,12 +49,18 @@ export default class Event extends Component {
     style.paddingTop = '10px';
     style.border = '1px solid';
 
-    let nameStyle = name.length > 90 ? { fontSize: '9px' } : { fontSize: '12px' };
+    let fontSize = '12px';
+
+    if (name.length > 90) {
+      fontSize = '8px';
+    } else if (name.length > 40) {
+      fontSize = '11px';
+    }
 
     return (
       <div style={style}>
         <img src={icon} />
-        <p style={nameStyle}>{name.toUpperCase()}</p>
+        <p style={{ fontSize }}>{name.toUpperCase()}</p>
         <p>{startMoment.format('h:mm')} - {endMoment.format('h:mm')}</p>
       </div>
     );
